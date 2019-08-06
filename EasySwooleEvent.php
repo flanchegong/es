@@ -23,6 +23,7 @@ use EasySwoole\Http\Response;
 use EasySwoole\Utility\File;
 use App\Throwable\Handler;
 use App\Utility\Code;
+use App\Process\HotReload;
 class EasySwooleEvent implements Event
 {
 
