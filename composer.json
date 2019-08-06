@@ -11,6 +11,9 @@
         "easyswoole/sync-invoker": "^1.0",
         "easyswoole/tracker": "^1.0",
         "easyswoole/policy": "^1.0",
-        "webonyx/graphql-php": "^0.13.5"
+        "webonyx/graphql-php": "^0.13.5",
+        "easyswoole/mysqli": "^1.1",
+        "easyswoole/http-client": "^1.0",
+        "easyswoole/curl": "^1.0"
     }
 }
