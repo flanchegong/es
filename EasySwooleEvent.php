@@ -16,10 +16,13 @@ use EasySwoole\EasySwoole\Crontab\Crontab;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use App\Utility\Pool\Mysql\Enjoythin;
+use App\Utility\Pool\Redis\Cache;
+use App\Utility\Pool\Redis\Session;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
 use EasySwoole\Utility\File;
-
+use App\Throwable\Handler;
+use App\Utility\Code;
 class EasySwooleEvent implements Event
 {
 
