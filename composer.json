@@ -14,6 +14,7 @@
         "webonyx/graphql-php": "^0.13.5",
         "easyswoole/mysqli": "^1.1",
         "easyswoole/http-client": "^1.0",
-        "easyswoole/curl": "^1.0"
+        "easyswoole/curl": "^1.0",
+        "easyswoole/trace": "^1.1"
     }
 }

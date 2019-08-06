@@ -37,14 +37,19 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
             'EasySwoole\\Tracker\\' => 19,
+            'EasySwoole\\Trace\\' => 17,
             'EasySwoole\\SyncInvoker\\' => 23,
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
             'EasySwoole\\Policy\\' => 18,
+            'EasySwoole\\Mysqli\\' => 18,
             'EasySwoole\\Log\\' => 15,
             'EasySwoole\\Http\\' => 16,
+            'EasySwoole\\HttpClient\\Test\\' => 27,
+            'EasySwoole\\HttpClient\\' => 22,
             'EasySwoole\\FastCache\\' => 21,
             'EasySwoole\\EasySwoole\\' => 22,
+            'EasySwoole\\Curl\\' => 16,
             'EasySwoole\\Config\\Test\\' => 23,
             'EasySwoole\\Config\\' => 18,
             'EasySwoole\\Component\\Tests\\' => 27,
@@ -53,6 +58,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         'C' => 
         array (
             'Cron\\' => 5,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -101,6 +110,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/easyswoole/tracker/src',
         ),
+        'EasySwoole\\Trace\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/trace/src',
+        ),
         'EasySwoole\\SyncInvoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/sync-invoker/src',
@@ -117,6 +130,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/easyswoole/policy/src',
         ),
+        'EasySwoole\\Mysqli\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/mysqli/src',
+        ),
         'EasySwoole\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/log/src',
@@ -125,6 +142,14 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/easyswoole/http/src',
         ),
+        'EasySwoole\\HttpClient\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/http-client/tests',
+        ),
+        'EasySwoole\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/http-client/src',
+        ),
         'EasySwoole\\FastCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/fast-cache/src',
@@ -132,6 +157,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         'EasySwoole\\EasySwoole\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/easyswoole/src',
+        ),
+        'EasySwoole\\Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/curl/src',
         ),
         'EasySwoole\\Config\\Test\\' => 
         array (
@@ -152,6 +181,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
