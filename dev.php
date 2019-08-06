@@ -13,7 +13,7 @@ return [
         'PORT' => 9502,
         'SERVER_TYPE' => EASYSWOOLE_WEB_SERVER, //可选为:EASYSWOOLE_SERVER/EASYSWOOLE_WEB_SERVER/EASYSWOOLE_SOCKET_SERVER
         'SOCK_TYPE' => SWOOLE_TCP,
-        'RUN_MODEL' => SWOOLE_PROCESS,
+        'RUN_MODEL' => 'develop',//SWOOLE_PROCESS,
         'SETTING' => [
             'worker_num' => 4, //运行的worker进程数量
             'max_request' => 10000, //worker完成该数量的请求后将退出，防止内存溢出
