@@ -1,5 +1,11 @@
 {
     "require": {
-        "easyswoole/easyswoole": "3.x"
+        "easyswoole/easyswoole": "3.x",
+        "easyswoole/swoole-ide-helper": "^1.3",
+        "easyswoole/fast-cache": "^1.1",
+        "easyswoole/sync-invoker": "^1.0",
+        "easyswoole/tracker": "^1.0",
+        "easyswoole/policy": "^1.0",
+        "webonyx/graphql-php": "^0.13.5"
     }
 }

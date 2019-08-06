@@ -1,0 +1,19 @@
+{
+    "name": "easyswoole/policy",
+    "authors": [
+        {
+            "name": "韩文博",
+            "email": "9476400@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EasySwoole\\Policy\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "easyswoole/spl": "^1.1",
+        "ext-json":">=1.0"
+    }
+}

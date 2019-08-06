@@ -23,6 +23,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
         ),
+        'G' => 
+        array (
+            'GraphQL\\' => 8,
+        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
@@ -32,10 +36,14 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
             'EasySwoole\\Validate\\' => 20,
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
+            'EasySwoole\\Tracker\\' => 19,
+            'EasySwoole\\SyncInvoker\\' => 23,
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
+            'EasySwoole\\Policy\\' => 18,
             'EasySwoole\\Log\\' => 15,
             'EasySwoole\\Http\\' => 16,
+            'EasySwoole\\FastCache\\' => 21,
             'EasySwoole\\EasySwoole\\' => 22,
             'EasySwoole\\Config\\Test\\' => 23,
             'EasySwoole\\Config\\' => 18,
@@ -69,6 +77,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'GraphQL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webonyx/graphql-php/src',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
@@ -85,6 +97,14 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/easyswoole/trigger/src',
         ),
+        'EasySwoole\\Tracker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/tracker/src',
+        ),
+        'EasySwoole\\SyncInvoker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/sync-invoker/src',
+        ),
         'EasySwoole\\Spl\\Test\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/spl/test',
@@ -93,6 +113,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             0 => __DIR__ . '/..' . '/easyswoole/spl/src',
         ),
+        'EasySwoole\\Policy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/policy/src',
+        ),
         'EasySwoole\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/log/src',
@@ -100,6 +124,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         'EasySwoole\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/http/src',
+        ),
+        'EasySwoole\\FastCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/fast-cache/src',
         ),
         'EasySwoole\\EasySwoole\\' => 
         array (
