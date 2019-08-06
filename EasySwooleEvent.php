@@ -223,5 +223,12 @@ class EasySwooleEvent implements Event
         }
     }
 
+    private static function preLoadPool()
+    {
+        $Pool = PoolManager::getInstance();
+        $Pool->getPool(Cache::class)->preLoad(Config::getInstance()->getConf('redis.cache.pool.minnum'));
+        $Pool->getPool(Session::class)->preLoad(Config::getInstance()->getConf('redis.session.pool.minnum'));
+    }
+
 
 }
