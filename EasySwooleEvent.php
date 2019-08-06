@@ -15,6 +15,7 @@ use EasySwoole\Component\Pool\PoolManager;
 use EasySwoole\EasySwoole\Crontab\Crontab;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
+use App\Utility\Pool\Mysql\Enjoythin;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
 use EasySwoole\Utility\File;
@@ -90,6 +91,9 @@ class EasySwooleEvent implements Event
                 self::preLoadPool();
             }
         });
+
+        $swooleServer = ServerManager::getInstance()->getSwooleServer();
+        $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
     }
 
     public static function onRequest(Request $request, Response $response): bool
