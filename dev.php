@@ -46,6 +46,7 @@ return [
         'PROCESS_NUM' => 0,//进程数,大于0才开启
         'BACKLOG'     => 256,//数据队列缓冲区大小
     ],
+    'RUN_MODE' => 'develop', //运行模式
     'DISPLAY_ERROR' => true,//是否开启错误显示
     /*################ MYSQL CONFIG ##################*/
 
