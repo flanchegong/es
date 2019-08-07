@@ -21,7 +21,7 @@ class taskClient
 
     public function connect()
     {
-        if (!$fp = $this->client->connect("127.0.0.1", 9501, 1)) {
+        if (!$fp = $this->client->connect("127.0.0.1", 9504, 1)) {
             echo "Error: {$fp->errMsg}[{$fp->errCode}]\n";
             return;
         }
