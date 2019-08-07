@@ -2,7 +2,7 @@
 
 $http_server = new swoole_http_server('0.0.0.0',9503);
 $http_server->set(array('daemonize'=> false));
-$http_server->on('request','request');
+
 //......设置各个回调......
 //多监听一个tcp端口，对外开启tcp服务，并设置tcp服务器的回调
 $tcp_server = $http_server->addListener('0.0.0.0', 9503, SWOOLE_SOCK_TCP);
