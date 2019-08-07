@@ -38,4 +38,3 @@ else
     echo "total pop bytes: $bytes\n";
     var_dump($chan->stats());
 }
-       
