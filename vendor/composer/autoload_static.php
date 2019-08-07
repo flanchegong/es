@@ -22,6 +22,7 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         array (
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
+            'PhpAmqpLib\\' => 11,
         ),
         'G' => 
         array (
@@ -85,6 +86,10 @@ class ComposerStaticInit83edc2ebba2b94aa9efc49022fcd7bcd
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
         ),
         'GraphQL\\' => 
         array (
