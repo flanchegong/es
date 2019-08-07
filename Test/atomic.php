@@ -17,3 +17,15 @@ if (pcntl_fork() > 0) {
     $n->wakeup();
     echo "child end\n";
 }
+
+/**
+135
+124
+
+1
+999
+master start
+child start
+child end
+master end
+*/
