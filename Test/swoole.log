@@ -1,0 +1,24 @@
+[2019-08-08 10:12:06 ^18583.14]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18579.10]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18588.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18582.13]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18591.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18584.15]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18585.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18586.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18592.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18581.12]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18581.12]	NOTICE	swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2019-08-08 10:12:06 *18587.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 *18590.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18578.9]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18578.9]	NOTICE	swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2019-08-08 10:12:06 ^18577.8]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 #18571.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 #18571.4]	INFO	Server is shutdown now
+[2019-08-08 10:12:06 ^18577.8]	NOTICE	swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2019-08-08 10:12:06 *18589.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18580.11]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18580.11]	NOTICE	swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2019-08-08 10:12:06 $18572.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-08-08 10:12:06 ^18579.10]	NOTICE	swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
