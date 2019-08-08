@@ -6,10 +6,10 @@
 return [
     'enjoythin' => [
         'host' => getenv('mysql_host'),
-        'port' => 3306,
+        'port' => getenv('mysql_port'),
         'user' => getenv('mysql_username'),
-        'timeout' => 3,
-        'charset' => 'utf8',
+        'timeout' => getenv('mysql_timeout'),
+        'charset' =>getenv('mysql_charset'),
         'password' => getenv('mysql_password'),
         'database' => getenv('mysql_database'),
         'pool' => [

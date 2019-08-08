@@ -51,21 +51,21 @@ return [
     /*################ MYSQL CONFIG ##################*/
 
     'MYSQL' => [
-        'host'          => 'localhost',
-        'port'          => '3306',
-        'user'          => 'root',
-        'timeout'       => '5',
-        'charset'       => 'utf8mb4',
-        'password'      => 'root',
-        'database'      => 'root',
+        'mysql_host'          => 'localhost',
+        'mysql_port'          => '3306',
+        'mysql_username'          => 'root',
+        'mysql_timeout'       => '5',
+        'mysql_charset'       => 'utf8mb4',
+        'mysql_password'      => 'root',
+        'mysql_database'      => 'root',
         'POOL_MAX_NUM'  => '20',
         'POOL_TIME_OUT' => '0.1',
     ],
     /*################ REDIS CONFIG ##################*/
     'REDIS' => [
-        'host'          => '127.0.0.1',
-        'port'          => '6379',
-        'auth'          => '',
+        'redis_host'          => '127.0.0.1',
+        'redis_port'          => '6379',
+        'redis_password'          => '',
         'POOL_MAX_NUM'  => '20',
         'POOL_MIN_NUM'  => '5',
         'POOL_TIME_OUT' => '0.1',
