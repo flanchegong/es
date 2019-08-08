@@ -1,4 +1,5 @@
 <?php
+namespace Flanche\Test;
 use Co;
 
 $cid = go(function () {
