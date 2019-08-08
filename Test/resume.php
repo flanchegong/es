@@ -14,3 +14,13 @@ co::resume($id);
 echo "start to resume $id @2\n";
 co::resume($id);
 echo "main\n";
+
+
+/**
+start coro 1
+start to resume 1 @1
+resume coro 1 @1
+start to resume 1 @2
+resume coro 1 @2
+main
+ */
