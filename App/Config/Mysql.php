@@ -5,7 +5,7 @@
 
 return [
     'enjoythin' => [
-        'host' => getenv('mysql_host'),
+        'host' => getenv('REDIS'),
         'port' => getenv('mysql_port'),
         'user' => getenv('mysql_username'),
         'timeout' => getenv('mysql_timeout'),
