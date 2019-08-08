@@ -1,4 +1,5 @@
 <?php
+
 function test1() {
     test2();
 }
