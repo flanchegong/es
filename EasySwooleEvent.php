@@ -37,7 +37,7 @@ class EasySwooleEvent implements Event
 
         // 载入Config文件夹中的配置文件
         self::loadAppConfigFile();
-
+        var_dump(getenv('MYSQL'));exit;
         // 配置错误处理回调
         Di::getInstance()->set(SysConst::ERROR_HANDLER, [Handler::class, 'errorHandler']);
         // 配置脚本结束回调
