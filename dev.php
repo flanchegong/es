@@ -48,26 +48,5 @@ return [
     ],
     'RUN_MODE' => 'develop', //运行模式
     'DISPLAY_ERROR' => true,//是否开启错误显示
-    /*################ MYSQL CONFIG ##################*/
 
-    'MYSQL' => [
-        'host'          => 'localhost',
-        'port'          => '3306',
-        'username'          => 'root',
-        'timeout'       => '5',
-        'charset'       => 'utf8mb4',
-        'password'      => 'root',
-        'database'      => 'root',
-        'POOL_MAX_NUM'  => '20',
-        'POOL_TIME_OUT' => '0.1',
-    ],
-    /*################ REDIS CONFIG ##################*/
-    'REDIS' => [
-        'host'          => '127.0.0.1',
-        'port'          => '6379',
-        'password'          => '',
-        'POOL_MAX_NUM'  => '20',
-        'POOL_MIN_NUM'  => '5',
-        'POOL_TIME_OUT' => '0.1',
-    ],
 ];
