@@ -543,6 +543,54 @@
         ]
     },
     {
+        "name": "easyswoole/mysqli-pool",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/easy-swoole/mysqli-pool.git",
+            "reference": "517b6a3d23c346a88ce5b395dc38825080eb3260"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://mirrors.huaweicloud.com/repository/php/dist/easyswoole/mysqli-pool/easyswoole-mysqli-pool-1.0.2-517b6a3d.zip",
+            "reference": "517b6a3d23c346a88ce5b395dc38825080eb3260",
+            "shasum": "09858ae770321458a030df0a32c467aea0b0f226"
+        },
+        "require": {
+            "easyswoole/component": "^1.5",
+            "easyswoole/mysqli": "^1.1"
+        },
+        "require-dev": {
+            "easyswoole/swoole-ide-helper": "^1.2"
+        },
+        "time": "2019-05-20T05:54:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "EasySwoole\\MysqliPool\\": "src/"
+            }
+        },
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "YF",
+                "email": "291323003@qq.com"
+            }
+        ],
+        "description": "An efficient swoole framework",
+        "homepage": "https://www.easyswoole.com/",
+        "keywords": [
+            "async",
+            "easyswoole",
+            "framework",
+            "swoole"
+        ]
+    },
+    {
         "name": "easyswoole/policy",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",

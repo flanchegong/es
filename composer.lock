@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2e7f052ed17cdfa81bea8c31ebd9ba4",
+    "content-hash": "644641e30311e94dfb00fe77fcf0128e",
     "packages": [
         {
             "name": "dragonmantank/cron-expression",
@@ -528,6 +528,52 @@
                 "swoole"
             ],
             "time": "2019-07-12T03:16:16+00:00"
+        },
+        {
+            "name": "easyswoole/mysqli-pool",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/mysqli-pool.git",
+                "reference": "517b6a3d23c346a88ce5b395dc38825080eb3260"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.huaweicloud.com/repository/php/dist/easyswoole/mysqli-pool/easyswoole-mysqli-pool-1.0.2-517b6a3d.zip",
+                "reference": "517b6a3d23c346a88ce5b395dc38825080eb3260",
+                "shasum": "09858ae770321458a030df0a32c467aea0b0f226"
+            },
+            "require": {
+                "easyswoole/component": "^1.5",
+                "easyswoole/mysqli": "^1.1"
+            },
+            "require-dev": {
+                "easyswoole/swoole-ide-helper": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EasySwoole\\MysqliPool\\": "src/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "YF",
+                    "email": "291323003@qq.com"
+                }
+            ],
+            "description": "An efficient swoole framework",
+            "homepage": "https://www.easyswoole.com/",
+            "keywords": [
+                "async",
+                "easyswoole",
+                "framework",
+                "swoole"
+            ],
+            "time": "2019-05-20T05:54:50+00:00"
         },
         {
             "name": "easyswoole/policy",
