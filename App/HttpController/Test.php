@@ -16,7 +16,7 @@ class Test extends Controller
 {
     function index()
     {
-        var_dump( getenv('REDIS'));exit;
+        //var_dump( getenv('REDIS'));exit;
         $this->response()->write('test index');
         // TODO: Implement index() method.
     }

@@ -12,6 +12,7 @@ use EasySwoole\EasySwoole\Config;
 use EasySwoole\EasySwoole\Crontab\AbstractCronTask;
 use EasySwoole\FastCache\Cache;
 
+
 class ThrowtablePushMsgTask extends AbstractCronTask
 {
     /**
