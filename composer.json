@@ -14,10 +14,20 @@
         "easyswoole/policy": "^1.0",
         "webonyx/graphql-php": "^0.13.5",
         "easyswoole/mysqli": "^1.2",
-        "easyswoole/http-client": "^1.0",
+        "easyswoole/http-client": "^1.3",
         "easyswoole/curl": "^1.0",
         "easyswoole/trace": "^1.1",
         "php-amqplib/php-amqplib": "^2.9",
-        "easyswoole/mysqli-pool": "^1.0"
+        "easyswoole/mysqli-pool": "^1.0",
+        "easyswoole/phpunit": "^1.0",
+        "easyswoole/easy-whoops": "^3.0",
+        "easyswoole/cache": "^1.1",
+        "easyswoole/actor": "^2.0",
+        "easyswoole/console": "^1.0",
+        "easyswoole/validate": "^1.1",
+        "easyswoole/redis-pool": "^1.0",
+        "easyswoole/queue": "^1.0",
+        "easyswoole/apollo-config": "^1.0",
+        "easyswoole/rpc": "4.x"
     }
 }
