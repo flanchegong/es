@@ -24,6 +24,9 @@ use EasySwoole\Utility\File;
 use App\Throwable\Handler;
 use App\Utility\Code;
 use App\Process\HotReload;
+use EasySwoole\Whoops\Handler\CallbackHandler;
+use EasySwoole\Whoops\Handler\PrettyPageHandler;
+use EasySwoole\Whoops\Run;
 class EasySwooleEvent implements Event
 {
 
@@ -56,6 +59,12 @@ class EasySwooleEvent implements Event
 
         // 注册连接池
         self::registerPool();
+        $whoops = new Run();
+        $whoops->pushHandler(new PrettyPageHandler);  // 输出一个漂亮的页面
+        $whoops->pushHandler(new CallbackHandler(function ($exception, $inspector, $run, $handle) {
+            // 可以推进多个Handle 支持回调做更多后续处理
+        }));
+        $whoops->register();
     }
 
     public static function mainServerCreate(EventRegister $register)
@@ -97,6 +106,7 @@ class EasySwooleEvent implements Event
 
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
+        Run::attachTemplateRender(ServerManager::getInstance()->getSwooleServer());
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -114,6 +124,7 @@ class EasySwooleEvent implements Event
             $response->withStatus(Code::NOT_FOUND);
             $response->end();
         }
+        Run::attachRequest($request, $response);
         return true;
     }
 
