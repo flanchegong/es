@@ -19,7 +19,8 @@ class Router extends AbstractRouter
     {
         // TODO: Implement initialize() method.
 
-        $routeCollector->addRoute('GET', '/test/index', 'handler');
+        //$routeCollector->addRoute('GET', '/test/index', 'handler');
+        $routeCollector->get('/test/index', '/Test/index');
 //        $routeCollector->get('/index', '/Index/index');
 //        $routeCollector->get('/user', '/Test/user');
 //
