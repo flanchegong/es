@@ -18,12 +18,14 @@ class Router extends AbstractRouter
     function initialize(RouteCollector $routeCollector)
     {
         // TODO: Implement initialize() method.
-        $routeCollector->get('/index', '/Index/index');
-        $routeCollector->get('/user', '/Test/user');
 
-        $routeCollector->get('/', function (Request $request, Response $response) {
-            $response->write('this router index');
-        });
+        $routeCollector->addRoute('GET', '/test/index', 'handler');
+//        $routeCollector->get('/index', '/Index/index');
+//        $routeCollector->get('/user', '/Test/user');
+//
+//        $routeCollector->get('/', function (Request $request, Response $response) {
+//            $response->write('this router index');
+//        });
 //        $routeCollector->get('/test', function (Request $request, Response $response) {
 //            $response->write('this router test');
 //            return '/a';//重新定位到/a方法
