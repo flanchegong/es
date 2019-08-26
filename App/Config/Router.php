@@ -4,6 +4,7 @@
  */
 
 return [
+    'test/index' => ['version' => '4.0.0+', 'method' => 'get'],
     'test/index/allconfig' => ['version' => '4.0.0+', 'method' => 'get'],
     'test/index/sleep' => ['version' => '4.0.0+', 'method' => 'get'],
     'test/index/bingfa' => ['version' => '4.0.0+', 'method' => 'get'],
