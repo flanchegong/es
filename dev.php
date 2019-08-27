@@ -1,19 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yf
- * Date: 2019-01-01
- * Time: 20:06
- */
-
 return [
-    'SERVER_NAME'   => "EasySwoole",//服务名
+    'SERVER_NAME' => 'easyswoole3', // 只能用下划线，不要用别的特殊字符
     'MAIN_SERVER' => [
         'LISTEN_ADDRESS' => '127.0.0.1',
         'PORT' => 9502,
         'SERVER_TYPE' => EASYSWOOLE_WEB_SERVER, //可选为:EASYSWOOLE_SERVER/EASYSWOOLE_WEB_SERVER/EASYSWOOLE_SOCKET_SERVER
         'SOCK_TYPE' => SWOOLE_TCP,
-        'RUN_MODEL' => SWOOLE_PROCESS,//SWOOLE_PROCESS,
+        'RUN_MODEL' => SWOOLE_PROCESS,
         'SETTING' => [
             'worker_num' => 4, //运行的worker进程数量
             'max_request' => 10000, //worker完成该数量的请求后将退出，防止内存溢出
@@ -42,11 +35,8 @@ return [
         'AUTH' => null,
         'PUSH_LOG' => false,
     ],
-    'FAST_CACHE'    => [//fastCache组件
-        'PROCESS_NUM' => 0,//进程数,大于0才开启
-        'BACKLOG'     => 256,//数据队列缓冲区大小
-    ],
     'RUN_MODE' => 'develop', //运行模式
-    'DISPLAY_ERROR' => true,//是否开启错误显示
-
+    'FAST_CACHE' => [
+        'PROCESS_NUM' => 1 //FastCache进程数
+    ]
 ];

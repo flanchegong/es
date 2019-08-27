@@ -5,9 +5,9 @@
 
 return [
     'cache' => [
-        'host' => 'localhost',
-        'port' => 6379,
-        'auth' =>'',
+        'host' => getenv('redis_host'),
+        'port' => getenv('redis_port'),
+        'auth' => getenv('redis_password'),
         'pool' => [
             'maxnum' => 16, // 最大连接数
             'minnum' => 2, // 最小连接数
@@ -17,9 +17,9 @@ return [
         ],
     ],
     'session' => [
-        'host' =>'localhost',
-        'port' =>3306,
-        'auth' =>'',
+        'host' => getenv('redis_session_host'),
+        'port' => getenv('redis_session_port'),
+        'auth' => getenv('redis_session_password'),
         'mod_rate' => 300, // 5分钟；更新频率，单位秒
         'expire_time' => 2592000, //30天；有效时间，单位秒
         'pool' => [

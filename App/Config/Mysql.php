@@ -5,13 +5,13 @@
 
 return [
     'enjoythin' => [
-        'host' => '192.168.109.151',
-        'port' => 63307,
-        'user' => 'goodcang_test',
-        'timeout' =>5,
-        'charset' =>'UTF8',
-        'password' =>'0z77dXyvE89wb5Is',
-        'database' =>'goodcang_wms_sbx_172',
+        'host' => getenv('mysql_host'),
+        'port' => 3306,
+        'user' => getenv('mysql_username'),
+        'timeout' => 3,
+        'charset' => 'utf8',
+        'password' => getenv('mysql_password'),
+        'database' => getenv('mysql_database'),
         'pool' => [
             'maxnum' => 8, // 最大连接数
             'minnum' => 2, // 最小连接数
