@@ -22,9 +22,9 @@ class Cache extends AbstractPool
         if (!$obj->connect($conf['host'], $conf['port'])) {
             return null;
         }
-        if (!empty($conf['auth']) && !$obj->auth($conf['auth'])) {
-            return null;
-        }
+//        if (!empty($conf['auth']) && !$obj->auth($conf['auth'])) {
+//            return null;
+//        }
         return $obj;
     }
 }
