@@ -22,7 +22,7 @@ class Handler
     {
         $error = error_get_last();
         if (!empty($error)) {
-            Logger::getInstance()->log(var_export($error, true), 'shut_down');
+            Logger::getInstance()->log(var_export($error, true), 1);
             if (Config::getInstance()->getConf('app.dingtalk.enable')) {
                 Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$error['message'], 'shut_down', time(), $error['file'], $error['line']]);
             }
@@ -31,7 +31,7 @@ class Handler
 
     public static function errorHandler($errorCode, $description, $file = null, $line = null)
     {
-        Logger::getInstance()->log(var_export(['description' => $description, 'file' => $file, 'line' => $line], true), 'error');
+        Logger::getInstance()->log(var_export(['description' => $description, 'file' => $file, 'line' => $line], true), 2);
         if (Config::getInstance()->getConf('app.dingtalk.enable')) {
             Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$description, 'error', time(), $file, $line]);
         }
@@ -39,7 +39,7 @@ class Handler
 
     public static function httpExceptionHandler(\Throwable $throwable, Request $request, Response $response)
     {
-        Logger::getInstance()->log($throwable->__toString(), 'http_exception');
+        Logger::getInstance()->log($throwable->__toString(), 3);
         if (Config::getInstance()->getConf('app.dingtalk.enable')) {
             $ip = $request->getAttribute('remote_ip');
             $tmp = $request->getHeader('user-agent');
