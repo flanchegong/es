@@ -24,7 +24,7 @@ class Handler
         if (!empty($error)) {
             Logger::getInstance()->log(var_export($error, true), 1);
             if (Config::getInstance()->getConf('app.dingtalk.enable')) {
-                Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$error['message'], 'shut_down', time(), $error['file'], $error['line']]);
+                Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$error['message'], 1, time(), $error['file'], $error['line']]);
             }
         }
     }
@@ -33,7 +33,7 @@ class Handler
     {
         Logger::getInstance()->log(var_export(['description' => $description, 'file' => $file, 'line' => $line], true), 2);
         if (Config::getInstance()->getConf('app.dingtalk.enable')) {
-            Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$description, 'error', time(), $file, $line]);
+            Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$description, 2, time(), $file, $line]);
         }
     }
 
@@ -44,7 +44,7 @@ class Handler
             $ip = $request->getAttribute('remote_ip');
             $tmp = $request->getHeader('user-agent');
             $userAgent = (is_array($tmp) && count($tmp) > 0) ? $tmp[0] : '';
-            Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$throwable->getMessage(), 'http_exception',
+            Cache::getInstance()->enQueue(self::PUSHMSG_QUEUE_KEY, [$throwable->getMessage(),3,
                 time(), $throwable->getFile(), $throwable->getLine(), $ip, $request->getUri()->__toString(), $userAgent]);
         }
     }
