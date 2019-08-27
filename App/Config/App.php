@@ -15,7 +15,7 @@ return [
         'second' => 3
     ],
     'dingtalk' => [
-        'enable' => true,
+        'enable' => false,
         'uri' => 'https://oapi.dingtalk.com/robot/send?access_token='
     ],
     'throw_check_rate' => 20, //单位秒，检测异常并推送消息定时任务的检测频率
