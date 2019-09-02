@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4cea883063029100508daf843c1e8c5",
+    "content-hash": "8af7cc8a95776a15310c29abd23da0f2",
     "packages": [
         {
             "name": "dragonmantank/cron-expression",
@@ -454,6 +454,40 @@
                 "swoole"
             ],
             "time": "2019-07-29T04:00:26+00:00"
+        },
+        {
+            "name": "easyswoole/swoole-ide-helper",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/ide-helper.git",
+                "reference": "7793f18b1aec2887b8c43cd90d9007bb6e839510"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-swoole/ide-helper/zipball/7793f18b1aec2887b8c43cd90d9007bb6e839510",
+                "reference": "7793f18b1aec2887b8c43cd90d9007bb6e839510",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Team Swoole",
+                    "email": "team@swoole.com"
+                }
+            ],
+            "description": "swoole-ide-helper",
+            "time": "2019-07-02T03:19:42+00:00"
         },
         {
             "name": "easyswoole/task",

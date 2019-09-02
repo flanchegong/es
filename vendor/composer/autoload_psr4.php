@@ -28,4 +28,5 @@ return array(
     'EasySwoole\\Component\\Tests\\' => array($vendorDir . '/easyswoole/component/Tests'),
     'EasySwoole\\Component\\' => array($vendorDir . '/easyswoole/component/src'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
+    'App\\' => array($baseDir . '/App'),
 );
