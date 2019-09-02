@@ -12,7 +12,7 @@ use EasySwoole\Http\Response;
 use FastRoute\RouteCollector;
 class Router extends AbstractRouter
 {
-    function initialize(RouteCollector $routeCollector)
+    public function initialize(RouteCollector $routeCollector)
     {
 //        $this->setGlobalMode(true);
 //        $this->setGlobalMode(false);
@@ -24,6 +24,6 @@ class Router extends AbstractRouter
 //        });
         // TODO: Implement initialize() method.
        // echo 'abc';
-        //$routeCollector->get('/test','/Index/index');
+        $routeCollector->get('/test','/Index/index');
     }
 }
