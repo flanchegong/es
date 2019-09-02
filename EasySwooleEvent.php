@@ -18,6 +18,7 @@ use App\Process\ProcessOne;
 use App\ExceptionHandler;
 use EasySwoole\Component\Di;
 use App\Log\MyLogHandle;
+use EasySwoole\Http\Message\Status;
 class EasySwooleEvent implements Event
 {
 
@@ -58,6 +59,12 @@ class EasySwooleEvent implements Event
         $register->add($register::onWorkerStart,function (\swoole_server $server,int $workerId){
             var_dump($workerId.'start');
         });
+
+        // 给server 注册相关事件 在 WebSocket 模式下  message 事件必须注册 并且交给
+        $register->set(EventRegister::onMessage, function (\swoole_websocket_server $server, \swoole_websocket_frame $frame) {
+            var_dump($frame);
+        });
+
         /**
          * 除了进程名，其余参数非必须
          */
@@ -72,6 +79,20 @@ class EasySwooleEvent implements Event
 
     public static function onRequest(Request $request, Response $response): bool
     {
+        //不建议在这拦截请求,可增加一个控制器基类进行拦截
+        //如果真要拦截,判断之后return false即可
+        $code = $request->getRequestParam('code');
+        if (empty($code)){
+            $data = Array(
+                "code" => Status::CODE_BAD_REQUEST,
+                "result" => [],
+                "msg" => '验证失败'
+            );
+            $response->write(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+            $response->withHeader('Content-type', 'application/json;charset=utf-8');
+            $response->withStatus(Status::CODE_BAD_REQUEST);
+            return false;
+        }
         // TODO: Implement onRequest() method.
         return true;
     }
