@@ -14,6 +14,7 @@ use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
 use App\Process\HotReload;
+use App\Process\ProcessOne;
 use App\ExceptionHandler;
 use EasySwoole\Component\Di;
 use App\Log\MyLogHandle;
@@ -49,6 +50,19 @@ class EasySwooleEvent implements Event
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
         // TODO: Implement mainServerCreate() method.
+        $register->add($register::onWorkerStart,function (\swoole_server $server,int $workerId){
+            var_dump($workerId.'start');
+        });
+        /**
+         * 除了进程名，其余参数非必须
+         */
+        $myProcess = new ProcessOne("processName",time(),false,2,true);
+        ServerManager::getInstance()->getSwooleServer()->addProcess($myProcess->getProcess());
+
+        $subPort = ServerManager::getInstance()->getSwooleServer()->addListener('0.0.0.0',9503,SWOOLE_TCP);
+        $subPort->on('receive',function (\swoole_server $server, int $fd, int $reactor_id, string $data){
+            var_dump($data);
+        });
     }
 
     public static function onRequest(Request $request, Response $response): bool
