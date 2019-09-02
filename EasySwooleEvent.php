@@ -15,9 +15,13 @@ use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
 use App\Process\HotReload;
 use App\ExceptionHandler;
+use EasySwoole\Component\Di;
 class EasySwooleEvent implements Event
 {
 
+    /**
+     * 框架初始化
+     */
     public static function initialize()
     {
 //        //获得原先的config配置项,加载到新的配置项中
