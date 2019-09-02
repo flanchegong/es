@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: yf
+ * User: flanche
  * Date: 2018/5/28
  * Time: 下午6:33
  */
@@ -44,10 +44,10 @@ class EasySwooleEvent implements Event
 //        $config = Config::getInstance()->getConf();
 //        Config::getInstance()->storageHandler(new SplArrayConfig())->load($config);
 
-//        $configData = Config::getInstance()->getConf('MYSQL');
-//        $config = new \EasySwoole\Mysqli\Config($configData);
-//        $poolConf = \EasySwoole\MysqliPool\Mysql::getInstance()->register('mysql', $config);
-//        $poolConf->setMaxObjectNum(20);
+        $configData = Config::getInstance()->getConf('MYSQL');
+        $config = new \EasySwoole\Mysqli\Config($configData);
+        $poolConf = \EasySwoole\MysqliPool\Mysql::getInstance()->register('mysql', $config);
+        $poolConf->setMaxObjectNum(20);
 
         // 设置错误显示级别
 //        self::setErrorReporting();
