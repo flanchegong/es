@@ -16,5 +16,6 @@ class Router extends AbstractRouter
     {
         $routeCollector->get('/test','/Index/test');
         $routeCollector->get('/index','/Index/index');
+        $routeCollector->post('/login','/Admin/Auth/login');
     }
 }
