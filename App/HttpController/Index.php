@@ -7,12 +7,18 @@
  */
 namespace App\HttpController;
 
+
 use EasySwoole\Http\AbstractInterface\Controller;
 
 class Index extends Controller
 {
+    function index()
+    {
+        echo '123';
+        // TODO: Implement index() method.
+    }
 
-  public function index()
+    function test()
     {
 
 //        $instance = \EasySwoole\EasySwoole\Config::getInstance();
