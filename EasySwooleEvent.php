@@ -16,6 +16,7 @@ use EasySwoole\Http\Response;
 use App\Process\HotReload;
 use App\ExceptionHandler;
 use EasySwoole\Component\Di;
+use App\Log\MyLogHandle;
 class EasySwooleEvent implements Event
 {
 
