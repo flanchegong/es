@@ -38,3 +38,7 @@ array(4) {
   ["line"]=>
   int(52)
 }
+severReload at 2019-09-02 14:29:11 use : 0.003 s total: 6 files
+[2019-09-02 14:29:11 $4739.0]	INFO	Server is reloading all workers now
+[2019-09-02 14:33:21 $4739.0]	WARNING	swManager_loop: cannot reload task workers, task workers is not started
+[2019-09-02 14:49:42 $4739.0]	WARNING	swManager_loop: cannot reload task workers, task workers is not started
