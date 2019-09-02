@@ -15,13 +15,14 @@ class Index extends Controller
     function index()
     {
 
-        $instance = \EasySwoole\EasySwoole\Config::getInstance();
-
-// 获取配置 按层级用点号分隔
-        $mysql=$instance->getConf('MYSQL');
-        var_dump($mysql);
-
-        // TODO: Implement index() method.
-        $this->response()->write('hello world');
+//        $instance = \EasySwoole\EasySwoole\Config::getInstance();
+//
+//// 获取配置 按层级用点号分隔
+//        $mysql=$instance->getConf('MYSQL');
+//        var_dump($mysql);
+//
+//        // TODO: Implement index() method.
+        echo 'abc';
+//        $this->response()->write('hello world');
     }
 }

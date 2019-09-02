@@ -23,6 +23,7 @@ class Router extends AbstractRouter
 //            $response->write('未找到路由匹配');
 //        });
         // TODO: Implement initialize() method.
-        $routeCollector->get('/test','/Index/index');
+       // echo 'abc';
+        //$routeCollector->get('/test','/Index/index');
     }
 }
