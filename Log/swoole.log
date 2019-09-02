@@ -12,3 +12,29 @@
 [2019-09-02 10:24:44 $2720.0]	WARNING	swManager_check_exit_status: worker#9[pid=2738] abnormal exit, status=0, signal=1
 [2019-09-02 10:24:44 $2720.0]	WARNING	swManager_check_exit_status: worker#10[pid=2739] abnormal exit, status=0, signal=1
 [2019-09-02 10:24:44 $2720.0]	WARNING	swManager_check_exit_status: worker#11[pid=2740] abnormal exit, status=0, signal=1
+[2019-09-02 13:19:41 $3469.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 #3468.8]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3478.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3479.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3484.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3485.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3482.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3481.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3480.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 *3483.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-02 13:19:41 $3469.0]	WARNING	swManager_check_exit_status: worker#8[pid=3486] abnormal exit, status=0, signal=1
+[2019-09-02 13:19:41 $3469.0]	WARNING	swManager_check_exit_status: worker#9[pid=3487] abnormal exit, status=0, signal=1
+[2019-09-02 13:19:42 $3469.0]	WARNING	swManager_check_exit_status: worker#10[pid=3488] abnormal exit, status=0, signal=1
+[2019-09-02 13:19:42 $3469.0]	WARNING	swManager_check_exit_status: worker#11[pid=3489] abnormal exit, status=0, signal=1
+hot reload ready at 2019-09-02 13:59:11 use : 0.006 s total: 5 files
+server hot reload start : use timer tick comparison
+array(4) {
+  ["type"]=>
+  int(2)
+  ["message"]=>
+  string(105) "Use of undefined constant 生产 - assumed '生产' (this will throw an Error in a future version of PHP)"
+  ["file"]=>
+  string(32) "/data/wwwroot/default/es/dev.php"
+  ["line"]=>
+  int(52)
+}

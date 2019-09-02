@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8af7cc8a95776a15310c29abd23da0f2",
+    "content-hash": "4cf50f406ad354850c7eb5452b8df64d",
     "packages": [
         {
             "name": "dragonmantank/cron-expression",
@@ -532,6 +532,55 @@
                 "easyswoole"
             ],
             "time": "2019-08-22T08:28:13+00:00"
+        },
+        {
+            "name": "easyswoole/trace",
+            "version": "1.1.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/easy-swoole/trace.git",
+                "reference": "57f589b5b2bbd2c94e30a9aee715a1a13e3ea50c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/easy-swoole/trace/zipball/57f589b5b2bbd2c94e30a9aee715a1a13e3ea50c",
+                "reference": "57f589b5b2bbd2c94e30a9aee715a1a13e3ea50c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EasySwoole\\Trace\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "YF",
+                    "email": "291323003@qq.com"
+                }
+            ],
+            "description": "An efficient swoole framework",
+            "homepage": "https://www.easyswoole.com/",
+            "keywords": [
+                "async",
+                "easyswoole",
+                "framework",
+                "swoole"
+            ],
+            "time": "2019-02-25T02:32:05+00:00"
         },
         {
             "name": "easyswoole/trigger",

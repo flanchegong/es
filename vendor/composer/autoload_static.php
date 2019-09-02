@@ -32,6 +32,7 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
             'EasySwoole\\Validate\\' => 20,
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
+            'EasySwoole\\Trace\\' => 17,
             'EasySwoole\\Task\\' => 16,
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
@@ -91,6 +92,10 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
         'EasySwoole\\Trigger\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/trigger/src',
+        ),
+        'EasySwoole\\Trace\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/trace/src',
         ),
         'EasySwoole\\Task\\' => 
         array (

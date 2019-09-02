@@ -15,6 +15,7 @@ return array(
     'EasySwoole\\Validate\\' => array($vendorDir . '/easyswoole/validate/src'),
     'EasySwoole\\Utility\\' => array($vendorDir . '/easyswoole/utility/src'),
     'EasySwoole\\Trigger\\' => array($vendorDir . '/easyswoole/trigger/src'),
+    'EasySwoole\\Trace\\' => array($vendorDir . '/easyswoole/trace/src'),
     'EasySwoole\\Task\\' => array($vendorDir . '/easyswoole/task/src'),
     'EasySwoole\\Spl\\Test\\' => array($vendorDir . '/easyswoole/spl/test'),
     'EasySwoole\\Spl\\' => array($vendorDir . '/easyswoole/spl/src'),
