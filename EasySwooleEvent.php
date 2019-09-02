@@ -29,6 +29,11 @@ class EasySwooleEvent implements Event
 //        //获得原先的config配置项,加载到新的配置项中
 //        $config = Config::getInstance()->getConf();
 //        Config::getInstance()->storageHandler(new SplArrayConfig())->load($config);
+
+        $configData = Config::getInstance()->getConf('MYSQL');
+        $config = new \EasySwoole\Mysqli\Config($configData);
+        $poolConf = \EasySwoole\MysqliPool\Mysql::getInstance()->register('mysql', $config);
+        $poolConf->setMaxObjectNum(20);
         // TODO: Implement initialize() method.
         date_default_timezone_set('Asia/Shanghai');
         Di::getInstance()->set(SysConst::LOGGER_HANDLER,new MyLogHandle());
