@@ -19,8 +19,20 @@ use App\ExceptionHandler;
 use EasySwoole\Component\Di;
 use App\Log\MyLogHandle;
 use EasySwoole\Http\Message\Status;
+use App\Utility\Pub;
 class EasySwooleEvent implements Event
 {
+
+    private static function setErrorReporting()
+    {
+        if (Pub::isDev()) {
+            ini_set('display_errors', 'On');
+            error_reporting(-1);
+        } else {
+            ini_set('display_errors', 'Off');
+            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+        }
+    }
 
     /**
      * 框架初始化
@@ -35,6 +47,9 @@ class EasySwooleEvent implements Event
         $config = new \EasySwoole\Mysqli\Config($configData);
         $poolConf = \EasySwoole\MysqliPool\Mysql::getInstance()->register('mysql', $config);
         $poolConf->setMaxObjectNum(20);
+
+        // 设置错误显示级别
+        self::setErrorReporting();
         // TODO: Implement initialize() method.
         date_default_timezone_set('Asia/Shanghai');
         Di::getInstance()->set(SysConst::LOGGER_HANDLER,new MyLogHandle());

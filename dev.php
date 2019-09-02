@@ -49,4 +49,5 @@ return [
         'POOL_MIN_NUM'  => '5',
         'POOL_TIME_OUT' => '0.1',
     ],
+    'RUN_MODE' => 'develop', //运行模式
 ];
