@@ -13,18 +13,30 @@ use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
-
+use App\Process\HotReload;
 class EasySwooleEvent implements Event
 {
 
     public static function initialize()
     {
+//        //获得原先的config配置项,加载到新的配置项中
+//        $config = Config::getInstance()->getConf();
+//        Config::getInstance()->storageHandler(new SplArrayConfig())->load($config);
         // TODO: Implement initialize() method.
         date_default_timezone_set('Asia/Shanghai');
+
+        Di::getInstance()->set(SysConst::ERROR_HANDLER,function (){});//配置错误处理回调
+        Di::getInstance()->set(SysConst::SHUTDOWN_FUNCTION,function (){});//配置脚本结束回调
+        Di::getInstance()->set(SysConst::HTTP_CONTROLLER_NAMESPACE,'App\\HttpController\\');//配置控制器命名空间
+        Di::getInstance()->set(SysConst::HTTP_CONTROLLER_MAX_DEPTH,5);//配置http控制器最大解析层级
+        Di::getInstance()->set(SysConst::HTTP_EXCEPTION_HANDLER,function (){});//配置http控制器异常回调
+        Di::getInstance()->set(SysConst::HTTP_CONTROLLER_POOL_MAX_NUM,15);//http控制器对象池最大数量
     }
 
     public static function mainServerCreate(EventRegister $register)
     {
+        $swooleServer = ServerManager::getInstance()->getSwooleServer();
+        $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
         // TODO: Implement mainServerCreate() method.
     }
 
