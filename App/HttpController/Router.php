@@ -14,8 +14,11 @@ class Router extends AbstractRouter
 {
     public function initialize(RouteCollector $routeCollector)
     {
-        $routeCollector->get('/test','/Index/test');
-        $routeCollector->get('/index','/Index/index');
+        $routeCollector->get('/task','/Index/task');
+        $routeCollector->get('/template/task','/Index/templateTask');
+        $routeCollector->get('/quick/task','/Index/quickTask');
+        $routeCollector->get('/multi/task/concurrency','/Index/multiTaskConcurrency');
+
         $routeCollector->post('/login','/Admin/Auth/login');
     }
 }
