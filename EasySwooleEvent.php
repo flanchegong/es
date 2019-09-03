@@ -100,18 +100,18 @@ class EasySwooleEvent implements Event
     {
         //不建议在这拦截请求,可增加一个控制器基类进行拦截
         //如果真要拦截,判断之后return false即可
-//        $code = $request->getRequestParam('code');
-//        if (empty($code)){
-//            $data = Array(
-//                "code" => Status::CODE_BAD_REQUEST,
-//                "result" => [],
-//                "msg" => '验证失败'
-//            );
-//            $response->write(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
-//            $response->withHeader('Content-type', 'application/json;charset=utf-8');
-//            $response->withStatus(Status::CODE_BAD_REQUEST);
-//            return false;
-//        }
+        $code = $request->getRequestParam('code');
+        if (empty($code)){
+            $data = Array(
+                "code" => Status::CODE_BAD_REQUEST,
+                "result" => [],
+                "msg" => '验证失败'
+            );
+            $response->write(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+            $response->withHeader('Content-type', 'application/json;charset=utf-8');
+            $response->withStatus(Status::CODE_BAD_REQUEST);
+            return false;
+        }
         // TODO: Implement onRequest() method.
         return true;
     }
