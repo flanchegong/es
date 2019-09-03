@@ -23,7 +23,7 @@ use App\Utility\Pub;
 use Error;
 use EasySwoole\Trace\TrackerManager;
 use App\Process\Test;
-use EasySwoole\Component\Process\Config;
+use EasySwoole\Component\Process\Config as p_config;
 class EasySwooleEvent implements Event
 {
 
@@ -75,7 +75,7 @@ class EasySwooleEvent implements Event
 
     public static function mainServerCreate(EventRegister $register)
     {
-        $processConfig = new Config();
+        $processConfig = new p_config();
         $processConfig->setProcessName('Test');
         /*
  * 传递给进程的参数
@@ -83,7 +83,7 @@ class EasySwooleEvent implements Event
         $processConfig->setArg([
             'arg1'=>time()
         ]);
-        ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($processConfig))->getProcess());
+        ServerManager::getInstance()->getSwooleServer()->addProcess((new Test($processConfig))->getProcess());
 
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
