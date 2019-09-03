@@ -11,13 +11,20 @@ return [
     'MAIN_SERVER' => [
         'LISTEN_ADDRESS' => '0.0.0.0',
         'PORT' => 9501,
-        'SERVER_TYPE' => EASYSWOOLE_WEB_SERVER, //可选为 EASYSWOOLE_SERVER  EASYSWOOLE_WEB_SERVER EASYSWOOLE_WEB_SOCKET_SERVER,EASYSWOOLE_REDIS_SERVER
+        //可选为 EASYSWOOLE_SERVER  EASYSWOOLE_WEB_SERVER EASYSWOOLE_WEB_SOCKET_SERVER,EASYSWOOLE_REDIS_SERVER
+        'SERVER_TYPE' => EASYSWOOLE_WEB_SERVER,
         'SOCK_TYPE' => SWOOLE_TCP,
         'RUN_MODEL' => SWOOLE_PROCESS,
         'SETTING' => [
-            'worker_num' => 8,
-            'reload_async' => true,
-            'max_wait_time'=>3
+            'max_wait_time'=>3,
+            'worker_num'            => 8,
+            'max_request'           => 5000,
+            'task_worker_num'       => 8,
+            'task_max_request'      => 1000,
+            //设置异步重启开关。设置为true时，将启用异步安全重启特性，Worker进程会等待异步事件完成后再退出。
+            'reload_async'          => true,
+            //开启后自动在onTask回调中创建协程
+            'task_enable_coroutine' => true
         ],
         'TASK'=>[
             'workerNum'=>4,
