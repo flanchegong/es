@@ -28,6 +28,7 @@ use EasySwoole\EasySwoole\Crontab\Crontab;
 use App\Device\Command;
 use App\Device\DeviceActor;
 use App\Device\DeviceManager;
+use EasySwoole\Actor\Actor;
 class EasySwooleEvent implements Event
 {
 
