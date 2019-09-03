@@ -8,8 +8,7 @@
 namespace App\HttpController;
 use App\Task\Test;
 use EasySwoole\EasySwoole\ServerManager;
-use EasySwoole\Http\AbstractInterface\Controller;
-class Index extends Controller
+class Index extends Base
 {
     function index()
     {
