@@ -26,6 +26,7 @@ return array(
     'EasySwoole\\Http\\' => array($vendorDir . '/easyswoole/http/src'),
     'EasySwoole\\EasySwoole\\Test\\' => array($vendorDir . '/easyswoole/easyswoole/tests'),
     'EasySwoole\\EasySwoole\\' => array($vendorDir . '/easyswoole/easyswoole/src'),
+    'EasySwoole\\Console\\' => array($vendorDir . '/easyswoole/console/src'),
     'EasySwoole\\Config\\Test\\' => array($vendorDir . '/easyswoole/config/tests'),
     'EasySwoole\\Config\\' => array($vendorDir . '/easyswoole/config/src'),
     'EasySwoole\\Component\\Tests\\' => array($vendorDir . '/easyswoole/component/Tests'),
