@@ -21,6 +21,7 @@ use App\Log\MyLogHandle;
 use EasySwoole\Http\Message\Status;
 use App\Utility\Pub;
 use Error;
+use EasySwoole\Trace\TrackerManager;
 class EasySwooleEvent implements Event
 {
 

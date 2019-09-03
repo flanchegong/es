@@ -32,10 +32,12 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
             'EasySwoole\\Validate\\' => 20,
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
+            'EasySwoole\\Tracker\\' => 19,
             'EasySwoole\\Trace\\' => 17,
             'EasySwoole\\Task\\' => 16,
             'EasySwoole\\Spl\\Test\\' => 20,
             'EasySwoole\\Spl\\' => 15,
+            'EasySwoole\\RedisPool\\' => 21,
             'EasySwoole\\Mysqli\\' => 18,
             'EasySwoole\\MysqliPool\\Test\\' => 27,
             'EasySwoole\\MysqliPool\\' => 22,
@@ -96,6 +98,10 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
         array (
             0 => __DIR__ . '/..' . '/easyswoole/trigger/src',
         ),
+        'EasySwoole\\Tracker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/tracker/src',
+        ),
         'EasySwoole\\Trace\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/trace/src',
@@ -111,6 +117,10 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
         'EasySwoole\\Spl\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/spl/src',
+        ),
+        'EasySwoole\\RedisPool\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/redis-pool/src',
         ),
         'EasySwoole\\Mysqli\\' => 
         array (
