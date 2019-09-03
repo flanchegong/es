@@ -42,3 +42,29 @@ severReload at 2019-09-02 14:29:11 use : 0.003 s total: 6 files
 [2019-09-02 14:29:11 $4739.0]	INFO	Server is reloading all workers now
 [2019-09-02 14:33:21 $4739.0]	WARNING	swManager_loop: cannot reload task workers, task workers is not started
 [2019-09-02 14:49:42 $4739.0]	WARNING	swManager_loop: cannot reload task workers, task workers is not started
+[2019-09-02 20:00:56 @12493.0]	WARNING	swoole_file_put_contents(:710): open(/data/wwwroot/default/es/Temp/pid.pid) failed, Error: Permission denied[13]
+[2019-09-02 20:07:31 @13019.0]	WARNING	swoole_file_put_contents(:710): open(/data/wwwroot/default/es/Temp/pid.pid) failed, Error: Permission denied[13]
+[2019-09-03 09:12:44 #13019.8]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13029.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13030.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13030.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13032.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13031.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13032.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13033.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13031.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13033.4]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13035.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13035.6]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13034.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13034.5]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 *13036.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13036.7]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:44 $13020.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 $13020.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 $13020.0]	WARNING	swManager_check_exit_status: worker#8[pid=13037] abnormal exit, status=0, signal=1
+[2019-09-03 09:12:45 #13019.8]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:45 *13029.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-09-03 09:12:47 $13020.0]	WARNING	swManager_check_exit_status: worker#9[pid=13038] abnormal exit, status=0, signal=1
+[2019-09-03 09:12:50 $13020.0]	WARNING	swManager_check_exit_status: worker#10[pid=13039] abnormal exit, status=0, signal=1
+[2019-09-03 09:12:53 $13020.0]	WARNING	swManager_check_exit_status: worker#11[pid=13040] abnormal exit, status=0, signal=1
