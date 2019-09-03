@@ -9,7 +9,7 @@ namespace App\Process;
 
 use EasySwoole\Component\Process\AbstractProcess;
 
-class Process extends AbstractProcess
+class Test extends AbstractProcess
 {
 
     protected function run($arg)
