@@ -22,6 +22,8 @@ use EasySwoole\Http\Message\Status;
 use App\Utility\Pub;
 use Error;
 use EasySwoole\Trace\TrackerManager;
+use App\Process\Test;
+use EasySwoole\Component\Process\Config;
 class EasySwooleEvent implements Event
 {
 
@@ -73,6 +75,16 @@ class EasySwooleEvent implements Event
 
     public static function mainServerCreate(EventRegister $register)
     {
+        $processConfig = new Config();
+        $processConfig->setProcessName('Test');
+        /*
+ * 传递给进程的参数
+*/
+        $processConfig->setArg([
+            'arg1'=>time()
+        ]);
+        ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($processConfig))->getProcess());
+
         $swooleServer = ServerManager::getInstance()->getSwooleServer();
         $swooleServer->addProcess((new HotReload('HotReload', ['disableInotify' => false]))->getProcess());
          //TODO: Implement mainServerCreate() method.
