@@ -24,6 +24,7 @@ use Error;
 use EasySwoole\Trace\TrackerManager;
 use App\Process\Test;
 use EasySwoole\Component\Process\Config as p_config;
+use EasySwoole\EasySwoole\Crontab\Crontab;
 class EasySwooleEvent implements Event
 {
 
@@ -107,6 +108,9 @@ class EasySwooleEvent implements Event
         $subPort->on('receive',function (\swoole_server $server, int $fd, int $reactor_id, string $data){
             var_dump($data);
         });
+
+        //注册定时任务
+        self::registerCrontabTask();
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -149,5 +153,23 @@ class EasySwooleEvent implements Event
         //tracker结束,结束之后,能看到中途设置的参数,调用栈的运行情况
         TrackerManager::getInstance()->closeTracker();
         // TODO: Implement afterAction() method.
+    }
+
+    private static function registerCrontabTask(): void
+    {
+        $Crontab = Crontab::getInstance();
+        $nowRunMode = Pub::getRunMode();
+        foreach (Config::getInstance()->getConf('crontab') as $task) {
+            if (!isset($task['class']) || empty($task['class']) || !class_exists($task['class'])) {
+                continue;
+            }
+            if (isset($task['runmode']) && $task['runmode'] != $nowRunMode) {
+                continue;
+            }
+            if (isset($task['version']) && !Pub::versionCompare($task['version'])) {
+                continue;
+            }
+            $Crontab->addTask($task['class']);
+        }
     }
 }
