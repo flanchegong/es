@@ -16,7 +16,12 @@
         "easyswoole/console": "^2.0",
         "easyswoole/tracker": "^1.0",
         "easyswoole/redis-pool": "^1.0",
-        "easyswoole/actor": "^2.0"
+        "easyswoole/actor": "^2.0",
+        "easyswoole/phpunit": "^1.0",
+        "easyswoole/annotation": "^1.0",
+        "easyswoole/queue": "^2.0",
+        "easyswoole/task": "^1.0",
+        "easyswoole/rpc": "^4.0"
     },
     "autoload": {
         "psr-4": {
