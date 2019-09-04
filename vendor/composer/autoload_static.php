@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
+class ComposerStaticInit68b00cde2f6df6f959e942c6e5bc0a90
 {
     public static $files = array (
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
@@ -50,6 +50,8 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
             'EasySwoole\\Config\\' => 18,
             'EasySwoole\\Component\\Tests\\' => 27,
             'EasySwoole\\Component\\' => 21,
+            'EasySwoole\\Actor\\Test\\' => 22,
+            'EasySwoole\\Actor\\' => 17,
         ),
         'C' => 
         array (
@@ -170,6 +172,14 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
         array (
             0 => __DIR__ . '/..' . '/easyswoole/component/src',
         ),
+        'EasySwoole\\Actor\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/actor/test',
+        ),
+        'EasySwoole\\Actor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/actor/src',
+        ),
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
@@ -183,8 +193,8 @@ class ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbc137a03155f0c4b1c28ea71bce845be::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit68b00cde2f6df6f959e942c6e5bc0a90::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit68b00cde2f6df6f959e942c6e5bc0a90::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
