@@ -15,7 +15,8 @@
         "easyswoole/mysqli-pool": "^1.0",
         "easyswoole/console": "^2.0",
         "easyswoole/tracker": "^1.0",
-        "easyswoole/redis-pool": "^1.0"
+        "easyswoole/redis-pool": "^1.0",
+        "easyswoole/actor": "^2.0"
     },
     "autoload": {
         "psr-4": {
