@@ -8,6 +8,7 @@
 namespace App\HttpController;
 use App\Task\Test;
 use EasySwoole\EasySwoole\ServerManager;
+use EasySwoole\Component\AtomicManager;
 class Index extends Base
 {
     function index()
@@ -48,5 +49,23 @@ class Index extends Base
         $results = \EasySwoole\EasySwoole\Swoole\Task\TaskManager::barrier($tasks, 3);
         var_dump($results);
         $this->response()->write('执行并发任务成功');
+    }
+
+    function push(){
+        $fd = intval($this->request()->getRequestParam('fd'));
+        $info = ServerManager::getInstance()->getSwooleServer()->connection_info($fd);
+        if(is_array($info)){
+            ServerManager::getInstance()->getSwooleServer()->send($fd,'push in http at '.time());
+        }else{
+            $this->response()->write("fd {$fd} not exist");
+        }
+    }
+
+    function atomic(){
+        AtomicManager::getInstance()->add('second',0);
+        $atomic = AtomicManager::getInstance()->get('second');
+        $atomic->add(1);
+        $this->response()->write($atomic->get());
+        // TODO: Implement index() method.
     }
 }
