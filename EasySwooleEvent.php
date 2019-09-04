@@ -30,6 +30,7 @@ use App\Device\DeviceActor;
 use App\Device\DeviceManager;
 use EasySwoole\Actor\Actor;
 use App\Utility\Pool\RedisPool;
+use EasySwoole\Component\Pool\PoolManager;
 class EasySwooleEvent implements Event
 {
 
