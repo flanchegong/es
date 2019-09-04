@@ -78,4 +78,46 @@ class Index extends Base
             $this->response()->write($data);
         });
     }
+
+    function go(){
+        go(function (){
+            $ret = [];
+
+            $wait = new \EasySwoole\Component\WaitGroup();
+
+            $wait->add();
+            go(function ()use($wait,&$ret){
+                \co::sleep(0.1);
+                $ret[] = time();
+                $wait->done();
+            });
+
+            $wait->add();
+            go(function ()use($wait,&$ret){
+                \co::sleep(2);
+                $ret[] = time();
+                $wait->done();
+            });
+
+            $wait->wait();
+
+            var_dump($ret);
+        });
+    }
+
+    function csp(){
+        go(function (){
+            $csp = new \EasySwoole\Component\Csp();
+            $csp->add('t1',function (){
+                \co::sleep(0.1);
+                return 't1 result';
+            });
+            $csp->add('t2',function (){
+                \co::sleep(0.1);
+                return 't2 result';
+            });
+
+            var_dump($csp->exec());
+        });
+    }
 }

@@ -20,7 +20,8 @@ class Router extends AbstractRouter
         $routeCollector->get('/multi/task/concurrency','/Index/multiTaskConcurrency');
         $routeCollector->get('/push','/Index/push');
         $routeCollector->get('/atomic','/Index/atomic');
-
+        $routeCollector->get('/go','/Index/go');
+        $routeCollector->get('/csp','/Index/csp');
         $routeCollector->post('/login','/Admin/Auth/login');
     }
 }
