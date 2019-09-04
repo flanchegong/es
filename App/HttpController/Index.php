@@ -9,6 +9,8 @@ namespace App\HttpController;
 use App\Task\Test;
 use EasySwoole\EasySwoole\ServerManager;
 use EasySwoole\Component\AtomicManager;
+use App\Utility\Pool\RedisObject;
+use App\Utility\Pool\RedisPool;
 class Index extends Base
 {
     function index()
@@ -67,5 +69,13 @@ class Index extends Base
         $atomic->add(1);
         $this->response()->write($atomic->get());
         // TODO: Implement index() method.
+    }
+
+    function testRedis(){
+        RedisPool::invoke(function (RedisObject $redis){
+            $redis->set('key','仙士可');
+            $data = $redis->get('key');
+            $this->response()->write($data);
+        });
     }
 }

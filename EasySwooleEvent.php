@@ -29,6 +29,7 @@ use App\Device\Command;
 use App\Device\DeviceActor;
 use App\Device\DeviceManager;
 use EasySwoole\Actor\Actor;
+use App\Utility\Pool\RedisPool;
 class EasySwooleEvent implements Event
 {
 
@@ -56,6 +57,8 @@ class EasySwooleEvent implements Event
         $config = new \EasySwoole\Mysqli\Config($configData);
         $poolConf = \EasySwoole\MysqliPool\Mysql::getInstance()->register('mysql', $config);
         $poolConf->setMaxObjectNum(20);
+
+        PoolManager::getInstance()->register(RedisPool::class, Config::getInstance()->getConf('REDIS.POOL_MAX_NUM'));
 
         // 设置错误显示级别
         self::setErrorReporting();

@@ -27,6 +27,29 @@ return [
     ],
     'TEMP_DIR' => null,
     'LOG_DIR' => null,
+    'CONSOLE'       => [
+        'ENABLE'         => true,
+        'LISTEN_ADDRESS' => '127.0.0.1',
+        'HOST'           => '127.0.0.1',
+        'PORT'           => 9500,
+        'EXPIRE'         => '120',
+        'PUSH_LOG'       => true,
+        'AUTH'           => [
+            [
+                'USER'     => 'root',
+                'PASSWORD' => '123456',
+                'MODULES'  => [
+                    'auth', 'server', 'help'
+                ],
+                'PUSH_LOG' => true,
+            ]
+        ]
+    ],
+    'FAST_CACHE'    => [
+        'PROCESS_NUM' => 0,
+        'BACKLOG'     => 256,
+    ],
+    'DISPLAY_ERROR' => true,
     /*################ REDIS CONFIG ##################*/
 
     'MYSQL' => [

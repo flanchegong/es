@@ -1,4 +1,10 @@
 {
+    "authors": [
+        {
+            "name": "flanche",
+            "email": "flanchegong@163.com"
+        }
+    ],
     "require": {
         "easyswoole/easyswoole": "3.x",
         "easyswoole/utility": "^1.1",
