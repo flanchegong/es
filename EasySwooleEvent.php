@@ -139,7 +139,7 @@ class EasySwooleEvent implements Event
         self::registerQueue($register);
 
         //控制台服务注册
-        //self::registerConsole();
+        self::registerConsole();
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -159,28 +159,28 @@ class EasySwooleEvent implements Event
 //            return false;
 //        }
         // TODO: Implement onRequest() method.
-//        $response->withHeader('Access-Control-Allow-Origin', '*');
-//        $response->withHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-//        $response->withHeader('Access-Control-Allow-Credentials', 'true');
-//        $response->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-//        if ($request->getMethod() === 'OPTIONS') {
-//            $response->withStatus(Status::CODE_OK);
-//            return false;
-//        }
+        $response->withHeader('Access-Control-Allow-Origin', '*');
+        $response->withHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        $response->withHeader('Access-Control-Allow-Credentials', 'true');
+        $response->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+        if ($request->getMethod() === 'OPTIONS') {
+            $response->withStatus(Status::CODE_OK);
+            return false;
+        }
         return true;
     }
 
     public static function afterRequest(Request $request, Response $response): void
     {
-//        TrackerManager::getInstance()->getTracker()->endPoint('request');
-//
-//        $responseMsg = $response->getBody()->__toString();
-//        Logger::getInstance()->console("响应内容:".$responseMsg);
-//        //响应状态码:
-////        var_dump($response->getStatusCode());
-//
-//        //tracker结束,结束之后,能看到中途设置的参数,调用栈的运行情况
-//        TrackerManager::getInstance()->closeTracker();
+        TrackerManager::getInstance()->getTracker()->endPoint('request');
+
+        $responseMsg = $response->getBody()->__toString();
+        Logger::getInstance()->console("响应内容:".$responseMsg);
+        //响应状态码:
+//        var_dump($response->getStatusCode());
+
+        //tracker结束,结束之后,能看到中途设置的参数,调用栈的运行情况
+        TrackerManager::getInstance()->closeTracker();
         // TODO: Implement afterAction() method.
     }
 
@@ -267,7 +267,7 @@ class EasySwooleEvent implements Event
     }
 
     private static function registerConsole(){
-        ServerManager::getInstance()->addServer('consoleTcp','9600',SWOOLE_TCP,'0.0.0.0',[
+        ServerManager::getInstance()->addServer('consoleTcp','9700',SWOOLE_TCP,'0.0.0.0',[
             'open_eof_check'=>false
         ]);
         $consoleTcp = ServerManager::getInstance()->getSwooleServer('consoleTcp');
