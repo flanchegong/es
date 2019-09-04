@@ -22,6 +22,7 @@ class Router extends AbstractRouter
         $routeCollector->get('/atomic','/Index/atomic');
         $routeCollector->get('/go','/Index/go');
         $routeCollector->get('/csp','/Index/csp');
+        $routeCollector->get('/meta','/Metadata/index');
         $routeCollector->post('/login','/Admin/Auth/login');
     }
 }

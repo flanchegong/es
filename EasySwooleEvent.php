@@ -33,6 +33,11 @@ use App\Utility\Pool\RedisPool;
 use EasySwoole\Component\Pool\PoolManager;
 use App\Utility\LogPusher;
 use EasySwoole\Console\Console;
+use App\Utility\Queue;
+use App\Utility\QueueProcess;
+use EasySwoole\Component\Timer;
+use EasySwoole\Queue\Job;
+use EasySwoole\RedisPool\Redis;
 class EasySwooleEvent implements Event
 {
 
@@ -129,6 +134,9 @@ class EasySwooleEvent implements Event
 
         //注册Actor
         self::registerDevice($register);
+
+        //注册队列
+        self::registerQueue($register);
 
         //控制台服务注册
         self::registerConsole();
@@ -285,5 +293,27 @@ class EasySwooleEvent implements Event
                 }
             }
         });
+    }
+
+    private static function registerQueue($register){
+        Redis::getInstance()->register('queue',new \EasySwoole\RedisPool\Config());
+        $driver = new \EasySwoole\Queue\Driver\Redis('queue','queue');
+        Queue::getInstance($driver);
+        $process = new QueueProcess('QueueProcess',null,false,2,true);
+        /*
+         * 需要多个进程消费，则new 多个QueueProcess 即可
+         */
+        ServerManager::getInstance()->addProcess($process);
+
+        $register->add($register::onWorkerStart,function ($ser,$workerId){
+            if($workerId == 0){
+                Timer::getInstance()->loop(3000,function (){
+                    $job = new Job();
+                    $job->setJobData(time());
+                    Queue::getInstance()->producer()->push($job);
+                });
+            }
+        });
+
     }
 }
