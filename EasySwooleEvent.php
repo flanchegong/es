@@ -139,7 +139,7 @@ class EasySwooleEvent implements Event
         self::registerQueue($register);
 
         //控制台服务注册
-        self::registerConsole();
+        //self::registerConsole();
     }
 
     public static function onRequest(Request $request, Response $response): bool
