@@ -20,7 +20,7 @@ class DeviceActor extends AbstractActor
        $actorConfig->setActorName('Device');
     }
 
-    protected function onStart()
+    public function onStart()
     {
         $this->lastHeartBeat = time();
         /*
