@@ -31,6 +31,8 @@ use App\Device\DeviceManager;
 use EasySwoole\Actor\Actor;
 use App\Utility\Pool\RedisPool;
 use EasySwoole\Component\Pool\PoolManager;
+use App\Utility\LogPusher;
+use EasySwoole\Console\Console;
 class EasySwooleEvent implements Event
 {
 
@@ -127,6 +129,9 @@ class EasySwooleEvent implements Event
 
         //注册Actor
         self::registerDevice($register);
+
+        //控制台服务注册
+        self::registerConsole();
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -250,6 +255,35 @@ class EasySwooleEvent implements Event
         });
         $tcp1ventRegister->set(EventRegister::onReceive,function (\swoole_server $server, int $fd, int $reactor_id, string $data) {
             echo "tcp服务1  fd:{$fd} 发送消息:{$data}\n";
+        });
+    }
+
+    private static function registerConsole(){
+        ServerManager::getInstance()->addServer('consoleTcp','9600',SWOOLE_TCP,'0.0.0.0',[
+            'open_eof_check'=>false
+        ]);
+        $consoleTcp = ServerManager::getInstance()->getSwooleServer('consoleTcp');
+        /**
+        密码为123456
+         */
+        $console = new Console("MyConsole",'123456');
+        /*
+         * 注册日志模块
+         */
+        $console->moduleContainer()->set(new LogPusher());
+        $console->protocolSet($consoleTcp)->attachToServer(ServerManager::getInstance()->getSwooleServer());
+        /*
+         * 给es的日志推送加上hook
+         */
+        Logger::getInstance()->onLog()->set('remotePush',function ($msg,$logLevel,$category)use($console){
+            if(Config::getInstance()->getConf('logPush')){
+                /*
+                 * 可以在 LogPusher 模型的exec方法中，对loglevel，category进行设置，从而实现对日志等级，和分类的过滤推送
+                 */
+                foreach ($console->allFd() as $item){
+                    $console->send($item['fd'],$msg);
+                }
+            }
         });
     }
 }
