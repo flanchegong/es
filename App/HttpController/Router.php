@@ -25,5 +25,6 @@ class Router extends AbstractRouter
         $routeCollector->get('/meta','/Metadata/index');
         $routeCollector->get('/info','/Message/index');
         $routeCollector->post('/login','/Admin/Auth/login');
+        $routeCollector->get('/','WebSocket/index');
     }
 }

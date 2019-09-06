@@ -38,6 +38,9 @@ use App\Utility\QueueProcess;
 use EasySwoole\Component\Timer;
 use EasySwoole\Queue\Job;
 use EasySwoole\RedisPool\Redis;
+use EasySwoole\Socket\Dispatcher;
+use App\WebSocket\WebSocketParser;
+use App\WebSocket\WebSocketEvent;
 class EasySwooleEvent implements Event
 {
 
@@ -108,6 +111,7 @@ class EasySwooleEvent implements Event
 
         //注册tcpserver
         self::registerTcpServer();
+        self::registerTcpSer($swooleServer);
 
         $register->add($register::onWorkerStart,function (\swoole_server $server,int $workerId){
             var_dump($workerId.'start');
@@ -140,6 +144,9 @@ class EasySwooleEvent implements Event
 
         //控制台服务注册
         self::registerConsole();
+
+        //websocket
+        self::registerWebsocket($register);
     }
 
     public static function onRequest(Request $request, Response $response): bool
@@ -266,6 +273,41 @@ class EasySwooleEvent implements Event
         });
     }
 
+    private static function registerTcpSer($server){
+
+        $subPort3 = $server->addListener(Config::getInstance()->getConf('MAIN_SERVER.LISTEN_ADDRESS'), 9504, SWOOLE_TCP);
+
+        $socketConfig = new \EasySwoole\Socket\Config();
+        $socketConfig->setType($socketConfig::TCP);
+        $socketConfig->setParser(new \App\TcpController\Parser());
+        //设置解析异常时的回调,默认将抛出异常到服务器
+        $socketConfig->setOnExceptionHandler(function ($server, $throwable, $raw, $client, $response) {
+            echo  "tcp服务3  fd:{$client->getFd()} 发送数据异常 \n";
+            $server->close($client->getFd());
+        });
+        $dispatch = new \EasySwoole\Socket\Dispatcher($socketConfig);
+
+        $subPort3->on('receive', function (\swoole_server $server, int $fd, int $reactor_id, string $data) use ($dispatch) {
+            echo "tcp服务3  fd:{$fd} 发送消息:{$data}\n";
+            $dispatch->dispatch($server, $data, $fd, $reactor_id);
+        });
+        $subPort3->set(
+            [
+                'open_length_check'     => true,
+                'package_max_length'    => 81920,
+                'package_length_type'   => 'N',
+                'package_length_offset' => 0,
+                'package_body_offset'   => 4,
+            ]
+        );
+        $subPort3->on('connect', function (\swoole_server $server, int $fd, int $reactor_id) {
+            echo "tcp服务3  fd:{$fd} 已连接\n";
+        });
+        $subPort3->on('close', function (\swoole_server $server, int $fd, int $reactor_id) {
+            echo "tcp服务3  fd:{$fd} 已关闭\n";
+        });
+    }
+
     private static function registerConsole(){
         ServerManager::getInstance()->addServer('consoleTcp','9700',SWOOLE_TCP,'0.0.0.0',[
             'open_eof_check'=>false
@@ -315,5 +357,35 @@ class EasySwooleEvent implements Event
             }
         });
 
+    }
+
+    private static function registerWebsocket($register){
+        /**
+         * **************** websocket控制器 **********************
+         */
+        // 创建一个 Dispatcher 配置
+        $conf = new \EasySwoole\Socket\Config();
+        // 设置 Dispatcher 为 WebSocket 模式
+        $conf->setType(\EasySwoole\Socket\Config::WEB_SOCKET);
+        // 设置解析器对象
+        $conf->setParser(new WebSocketParser());
+        // 创建 Dispatcher 对象 并注入 config 对象
+        $dispatch = new Dispatcher($conf);
+
+        // 给server 注册相关事件 在 WebSocket 模式下  on message 事件必须注册 并且交给 Dispatcher 对象处理
+        $register->set(EventRegister::onMessage, function (\swoole_websocket_server $server, \swoole_websocket_frame $frame) use ($dispatch) {
+            $dispatch->dispatch($server, $frame->data, $frame);
+        });
+
+        //自定义握手事件
+        $websocketEvent = new WebSocketEvent();
+        $register->set(EventRegister::onHandShake, function (\swoole_http_request $request, \swoole_http_response $response) use ($websocketEvent) {
+            $websocketEvent->onHandShake($request, $response);
+        });
+
+        //自定义关闭事件
+        $register->set(EventRegister::onClose, function (\swoole_server $server, int $fd, int $reactorId) use ($websocketEvent) {
+            $websocketEvent->onClose($server, $fd, $reactorId);
+        });
     }
 }
